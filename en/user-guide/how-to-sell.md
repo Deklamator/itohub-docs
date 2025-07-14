@@ -1,15 +1,15 @@
-# 💰 Как продать канал или рекламу?
+# How to Sell a Channel or Ad?
 
-Процесс продажи актива интуитивно понятен и состоит из нескольких шагов.
+The asset selling process is intuitive and consists of several steps.
 
-1.  **Переход к созданию оффера**: На главном экране нажмите кнопку "Sale". Вы будете перенаправлены на экран выбора канала.
+1.  **Proceed to Offer Creation**: On the main screen, press the "Sale" button. You will be redirected to the channel selection screen.
 
-2.  **Выбор Telegram-канала**: Система покажет список ваших Telegram-каналов и групп, где вы являетесь администратором. Выберите тот актив, который хотите выставить на продажу.
+2.  **Select a Telegram Channel**: The system will display a list of your Telegram channels and groups where you are an administrator. Choose the asset you want to put up for sale.
 
-3.  **Заполнение данных**: На экране создания оффера (`sales/upload-deal`) вам нужно будет указать:
-    * Название вашего предложения.
-    * Цену и валюту (по умолчанию TON).
-    * Подробное описание для покупателя.
-    * Тип оффера: **public** (публичный, виден всем в маркетплейсе) или **private** (приватный, доступен только по коду).
+3.  **Fill in the Details**: On the offer creation screen (`sales/upload-deal`), you will need to specify:
+    * The title of your offer.
+    * The price and currency (defaults to TON).
+    * A detailed description for the buyer.
+    * The offer type: **public** (visible to everyone in the marketplace) or **private** (accessible only by a code).
 
-4.  **Получение кода оффера**: После успешного создания вы будете перенаправлены на экран успеха, где отобразится уникальный код вашего оффера. Вы можете скопировать его и отправить напрямую потенциальному покупателю.
+4.  **Receive the Offer Code**: After successful creation, you will be redirected to a success screen displaying the unique code for your offer. You can copy it and send it directly to a potential buyer.
