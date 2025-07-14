@@ -1,2 +1,3 @@
-# itohub-docs
-Docs for ITOhub: The P2P platform for secure trading of Telegram assets (channels &amp; ads), powered by a TON blockchain escrow.
+# 👋 Добро пожаловать в ITOhub
+
+**ITOhub** — это P2P-платформа в формате **Telegram Mini App**, предназначенная для безопасной покупки и продажи цифровых активов.
