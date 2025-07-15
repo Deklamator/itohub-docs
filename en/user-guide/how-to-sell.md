@@ -4,6 +4,9 @@ The asset selling process is intuitive and consists of several steps.
 
 1.  **Proceed to Offer Creation**: On the main screen, press the "Sale" button. You will be redirected to the channel selection screen.
 
+
+![кнопка Sale](../../assets/2025-07-15_18-13-37.png)
+
 2.  **Select a Telegram Channel**: The system will display a list of your Telegram channels and groups where you are an administrator. Choose the asset you want to put up for sale.
 
 3.  **Fill in the Details**: On the offer creation screen (`sales/upload-deal`), you will need to specify:
