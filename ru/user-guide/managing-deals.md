@@ -1,23 +1,23 @@
-# Managing a Deal
+# Управление сделкой
 
-After the seller approves your request, a "deal room" is created. This is your personal control center for this specific transaction. Only the buyer and seller have access to this screen.
+После того как продавец одобрит ваш запрос, создается "комната сделки" — это ваш персональный центр управления для конкретной транзакции. Доступ к этому экрану есть только у покупателя и продавца.
 
-### Key Elements of the Deal Screen
+### Ключевые элементы экрана сделки
 
-1.  **Visual Status**: At the top of the screen, you will see a status tree (`StatusTree`) that visually displays the current stage of the deal and the steps already completed. The status automatically updates every 10-20 seconds.
-2.  **Deal Chat**: Each deal includes a secure chat where you can communicate with the other party to clarify details.
-3.  **Timer (for Ads)**: If the deal involves an ad placement, you will see a countdown timer to the post's publication time.
+1.  **Визуальный статус**: Сверху экрана вы увидите дерево статусов (`StatusTree`), которое наглядно показывает, на каком этапе находится сделка и какие шаги уже пройдены. Статус автоматически обновляется каждые 10-20 секунд.
+2.  **Чат сделки**: Для каждой сделки предусмотрен защищенный чат, где вы можете общаться с другой стороной для уточнения деталей.
+3.  **Таймер (для рекламы)**: Если сделка касается размещения рекламы, вы увидите таймер обратного отсчета до момента публикации поста.
 
-### Party Actions
+### Действия сторон
 
-Depending on your role (buyer or seller) and the current status of the deal, different buttons will be available to you to manage the process.
+В зависимости от вашей роли (покупатель или продавец) и текущего статуса сделки, вам будут доступны различные кнопки для управления процессом.
 
-* **Seller Actions**:
-    * Approve or reject the initial deal request.
-    * Confirm the transfer of channel ownership.
-    * Request a preview of the ad post from the buyer before publication.
+* **Действия Продавца**:
+    * Одобрить или отклонить первоначальный запрос на сделку.
+    * Подтвердить передачу прав на канал.
+    * Запросить у покупателя превью рекламного поста перед публикацией.
 
-* **Buyer Actions**:
-    * Cancel the deal before payment.
-    * Create and fund the escrow transaction on the TON blockchain by sending funds to the smart contract.
-    * Confirm the receipt of channel ownership or the ad publication, which releases the funds to the seller.
+* **Действия Покупателя**:
+    * Отменить сделку до момента оплаты.
+    * Создать и профинансировать эскроу-транзакцию в блокчейне TON, отправляя средства на смарт-контракт.
+    * Подтвердить получение прав на канал или факт публикации рекламы, что высвободит средства продавцу.
