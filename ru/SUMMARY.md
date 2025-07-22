@@ -13,12 +13,6 @@
 * [Ваш Профиль и История](user-guide/profile.md)
 * [Система Вознаграждений](user-guide/rewards.md)
 
-## Документация для Разработчиков
-
-* [Настройка Окружения](dokumentaciya-dlya-razrabotchikov/nastroika-okruzheniya.md)
-* [Структура Проекта](dokumentaciya-dlya-razrabotchikov/struktura-proekta.md)
-* [Технологический Стек](dokumentaciya-dlya-razrabotchikov/tekhnologicheskii-stek.md)
-
 ## Архитектура и Концепции
 
 * [Обзор Системы](architecture/system-overview.md)
