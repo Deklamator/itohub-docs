@@ -1,8 +1,6 @@
-# Table of Contents
+# Table of contents
 
 * [Welcome to ITOhub](README.md)
-
----
 
 ## User Guide
 
@@ -15,22 +13,16 @@
 * [Your Profile and History](user-guide/profile.md)
 * [Rewards System](user-guide/rewards.md)
 
----
-
 ## Developer Documentation
 
-* [Environment Setup](developers/setup.md)
-* [Project Structure](developers/project-structure.md)
-* [Technology Stack](developers/tech-stack.md)
-
----
+* [Environment Setup](developer-documentation/environment-setup.md)
+* [Project Structure](developer-documentation/project-structure.md)
+* [Technology Stack](developer-documentation/technology-stack.md)
 
 ## Architecture & Concepts
 
 * [System Overview](architecture/system-overview.md)
 * [Data Model](architecture/data-model.md)
-
----
 
 ## Smart Contract
 
