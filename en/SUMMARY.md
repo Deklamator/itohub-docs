@@ -13,12 +13,6 @@
 * [Your Profile and History](user-guide/profile.md)
 * [Rewards System](user-guide/rewards.md)
 
-## Developer Documentation
-
-* [Environment Setup](developer-documentation/environment-setup.md)
-* [Project Structure](developer-documentation/project-structure.md)
-* [Technology Stack](developer-documentation/technology-stack.md)
-
 ## Architecture & Concepts
 
 * [System Overview](architecture/system-overview.md)
