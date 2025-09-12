@@ -1,22 +1,71 @@
-# System Overview
+## EN — System Overview
 
-The ITOhub platform is a client-server application deeply integrated with the TON blockchain and the Telegram platform.
+### Purpose
 
-### Key Components
+**ITOhub** is a TON‑native Web3 platform for **secure P2P deals inside Telegram**. It enables safe transfer of channel ownership and ad slots through **smart‑contract escrow** while keeping the whole user journey inside a **Telegram Mini App & Bot**.
 
-1.  **Client (Frontend)**: This is a Telegram Mini App written in React. The user interacts exclusively with this interface. The client is responsible for displaying data and sending requests to the backend and the blockchain.
+### High‑Level Architecture
 
-2.  **Backend Server**: The server-side component that manages data not stored on the blockchain. This includes user profiles, offers, deal details, and chats. The backend is also responsible for user authentication via data from Telegram.
+* **Telegram Mini App & Bot** — user UI for offers, deals, payments, notifications.
+* **Backend Service (FastAPI, Dockerized)** — business logic, auth, sessions, validations.
+* **Database Layer** — **PostgreSQL** (users, channels, offers, deals), **Redis** (sessions, cache, rate‑limits).
+* **TON Smart Contracts** — escrow (fund, lock, resolve, distribute protocol fee).
+* **CI/CD** — GitHub Actions (tests, build, deploy).
 
-3.  **TON Blockchain**: The foundation for all financial operations. All fund transfers occur directly on this network.
+```mermaid
+flowchart TB
+  U[User via Telegram] --> M[Telegram Mini App & Bot]
+  M --> API[Backend API (FastAPI)]
+  API --> DB[(PostgreSQL)]
+  API --> REDIS[(Redis)]
+  API <--> TON[TON Smart Contracts (Escrow)]
+  CI[CI/CD (GitHub Actions)] --> API
+```
 
-4.  **Smart Contract (Escrow)**: A special contract deployed on the TON network. Its main task is to securely hold the buyer's funds during a deal and automatically transfer them to the seller (minus a commission) upon fulfillment of the conditions, or return them to the buyer if the deal is canceled.
+### Deployment Model (MVP)
 
-### Interaction Principle
+* **Single server** with Docker:
 
-A typical scenario (creating a deal) looks like this:
-1.  The user in the client (Mini App) accepts the terms of an offer.
-2.  The client sends a request to the **backend server** to create a deal record in the database.
-3.  For payment, the client uses **TON Connect** to form a transaction and prompts the user to sign it.
-4.  The user signs the transaction, and the funds are sent to the **smart contract's** address.
-5.  The backend server monitors the smart contract's state, and when the funds arrive, it updates the deal's status in its database, which is then reflected in the client's interface.
+  * **Container A:** Bot + API + (optionally) DB.
+  * **Container B:** TON integration module (SDK / light client).
+* Internal **docker network** between containers (REST/gRPC).
+* **Roadmap:** migrate to **Kubernetes** for horizontal scaling and independent DB/Redis nodes.
+
+```mermaid
+flowchart LR
+  subgraph Server
+    A[Container A: Bot + API]
+    B[Container B: TON Integration]
+    DB[(PostgreSQL)]
+    R[(Redis)]
+  end
+  A <-- REST/gRPC --> B
+  A --> DB
+  A --> R
+```
+
+### Security & Trust Principles
+
+* **On‑chain escrow** eliminates counter‑party risk.
+* **JWT auth via Telegram WebApp** for identity (signed `initData`).
+* **TLS** for all API endpoints.
+* **Anti‑fraud (planned):** anomaly detection, behavior limits, reputation/risk scoring.
+
+### Key Flows (happy‑path)
+
+1. **Create Offer** (channel sale / ad posting) in Mini App.
+2. **Join Deal** (public list or by **offer code**).
+3. **Fund Escrow** in **TON**; funds remain locked.
+4. **Seller Action** (e.g., transfer channel rights or place ad).
+5. **Resolve** → escrow pays out; **3% protocol fee** retained; gas fees on chain.
+6. **Dispute** (if needed) → DAO/arbiter policies (post‑MVP).
+
+> **See also:**
+>
+> • Architecture → **Data Model** (entities & relations)
+>
+> • **Smart Contract** → escrow states & transitions
+
+---
+
+
