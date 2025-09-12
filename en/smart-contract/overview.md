@@ -1,10 +1,43 @@
-# Smart Contract Overview
+## EN — Smart Contract Overview
 
-The ITOhub project's smart contract, written in the FunC language, is the core of the platform's secure transaction mechanism.
+### Purpose
 
-### Key Role — Centralized Escrow
+The **ITOhub smart contract** is designed to manage **escrow-based P2P deals** on the TON blockchain. It ensures that buyer funds are locked until the seller fulfills obligations (channel transfer, ad placement, bot rental, etc.).
 
-The contract's primary function is to act as a **centralized escrow service**. This means it temporarily holds the buyer's funds until the terms of the deal are met.
+### Core Functions
 
-It is important to understand that the contract is not fully decentralized. Key operations, such as dispute resolution, refunds, and commission withdrawal, can only be executed from the **administrator's (moderator's)** wallet. This provides an additional layer of control and the ability to intervene in disputed situations.
+* **Create Deal** (`op_create_deal`) — initializes escrow with buyer/seller IDs, asset reference, and amount.
+* **Fund Deal** (`op_fund_deal`) — buyer locks funds in TON; deal moves to *funded* state.
+* **Resolve Deal** (`op_resolve_deal`) — on successful completion, funds are released to seller minus protocol fee.
+* **Cancel Deal** (`op_cancel_deal`) — if unpaid within timeout, or by mutual consent before funding.
+* **Dispute** (`op_dispute`) — optional, escalates to DAO/arbiters (future stage).
 
+### State Machine
+
+```mermaid
+stateDiagram-v2
+    [*] --> PendingPayment
+    PendingPayment --> Funded : op_fund_deal
+    PendingPayment --> Cancelled : timeout / op_cancel_deal
+    Funded --> Resolved : op_resolve_deal
+    Funded --> Disputed : op_dispute
+    Disputed --> Resolved : DAO/arbiters
+    Disputed --> Cancelled : DAO/arbiters
+    Resolved --> [*]
+    Cancelled --> [*]
+```
+
+### Fees
+
+* **Protocol fee:** 3% flat per deal.
+* **Gas fees:** \~0.02 TON per transaction (paid on-chain).
+* Future extensions: referrer share, burn/treasury split.
+
+### Security
+
+* Immutable contract on TON.
+* Timeouts prevent deadlocks.
+* All state transitions logged on-chain.
+* Dispute mechanism designed for DAO/arbiters.
+
+---
