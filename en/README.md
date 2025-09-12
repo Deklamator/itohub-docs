@@ -25,4 +25,4 @@ Value
 
 - Investors and buyers get transparency and guaranteed fund protection.
 
-- The platform acts as a decentralized intermediary with a flat commission.
+- The platform acts as a decentralized intermediary with a flat commission.For
