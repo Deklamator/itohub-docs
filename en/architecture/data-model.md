@@ -1,38 +1,40 @@
-# Data Model
 
-This page describes the main entities (data models) that are used on the application's backend to store information.
+## EN — Data Model
 
-### `Creator` (User)
-Represents a user of the platform.
+### Core Entities
 
-* **Fields**: `{ id, telegram_id, username, rating, avatar_url }`
+| Entity       | Symbol | Description                                                                         |
+| ------------ | ------ | ----------------------------------------------------------------------------------- |
+| **User**     | `U`    | Telegram account interacting with ITOhub. Holds wallet, rating, history.            |
+| **Channel**  | `C`    | Digital asset (Telegram channel). Stores metrics, owner, sale status.               |
+| **Offer**    | `O`    | Listing for a deal (channel sale or ad posting). Has price, code, status.           |
+| **Deal**     | `D`    | Escrow contract instance. Connects buyer & seller, locks TON funds.                 |
+| **Passport** | `P`    | Token Passport — TIP‑3 token with metadata (ownership, history, metrics).           |
+| **Agent**    | `A`    | Swarm Agent linked to a channel. Collects metrics, provides insights, votes in DAO. |
 
-### `Channel`
-Represents a Telegram channel that can be sold or where an ad can be placed.
+### Relations
 
-* **Fields**: `{ id, telegram_id, type, username, subscriber_count, avg_post_reach, is_verified, photo_url }`
+* `U` ↔ `C` — A user owns one or multiple channels.
+* `C` → `O` — A channel can have one active public offer.
+* `O` → `D` — When accepted, an offer becomes a deal.
+* `D` locks TON funds until resolution.
+* `C` ↔ `P` — A channel can be tokenized via a Passport.
+* `A` ↔ `C` — Each channel can run its own Swarm Agent.
 
-### `Offer`
-An offer to sell an asset (a channel or an ad).
+```mermaid
+erDiagram
+  USER ||--o{ CHANNEL : owns
+  USER ||--o{ DEAL : participates
+  CHANNEL ||--o{ OFFER : listed
+  OFFER ||--|| DEAL : creates
+  CHANNEL ||--|| PASSPORT : tokenized_by
+  CHANNEL ||--o{ AGENT : monitored_by
+```
 
-* **Fields**: `{ id, creator, channel, offer_type, price, currency_type, code, title, description, ... }`
+### States
 
-### `Deal`
-An agreed-upon and confirmed transaction between a buyer and a seller.
+* **Offer** → `draft` → `active` → `accepted` → `closed/cancelled`
+* **Deal** → `pending_payment` → `funded` → `resolved` / `disputed`
+* **Passport** → `issued` → `active` → `burned`
 
-* **Fields**: `{ id, offer_id, buyer_id, seller_id, amount, status, created_at, buyer, seller, channel, ... }`
-
-### `OfferRequest`
-A request from a buyer to accept the terms of an offer.
-
-* **Fields**: `{ id, offer_id, buyer_id, status, ... }`
-
-### `RewardTask`
-Describes a task for which a user receives points upon completion.
-
-* **Fields**: `{ id, title, description, points_reward, ... }`
-
-### `ChatMessage`
-A message within the chat of a specific deal.
-
-* **Fields**: `{ id, content, sender_id, timestamp, is_read, ... }`
+---
