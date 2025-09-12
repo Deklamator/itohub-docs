@@ -60,12 +60,6 @@ flowchart LR
 5. **Resolve** → escrow pays out; **3% protocol fee** retained; gas fees on chain.
 6. **Dispute** (if needed) → DAO/arbiter policies (post‑MVP).
 
-> **See also:**
->
-> • Architecture → **Data Model** (entities & relations)
->
-> • **Smart Contract** → escrow states & transitions
-
 ---
 
 
