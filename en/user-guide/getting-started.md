@@ -17,7 +17,7 @@ You can open the ITOhub Mini App in two ways:
 1. **Direct link in Telegram** — tap the invitation/start link.
 2. **Search in Telegram** — type `ITOHubBot` in the global search and open the verified bot. Press **Start**, then tap **Open App**.
 
-![Main Screen](../../assets/en/start.png)
+![Main Screen](../../assets/2025-09-20_15-49-21.png)
 
 ### Step 2 — Automatic Authentication
 
