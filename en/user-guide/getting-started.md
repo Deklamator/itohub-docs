@@ -1,13 +1,5 @@
 # Getting Started & Authentication / Начало работы и аутентификация
 
-> **Target files:**
->
-> • `en/user-guide/getting-started.md`
->
-> • `ru/user-guide/getting-started.md`
-
----
-
 ## EN — Getting Started
 
 ### Step 1 — Launch the App
