@@ -40,4 +40,4 @@
 
 * After uploading, the system shows confirmation and a unique **Offer Code**.
 
-![Offer Success](../../assets/en/2025-09-20_18-33-37.png)
+![Offer Success](../../assets/2025-09-20_18-33-37.png)
