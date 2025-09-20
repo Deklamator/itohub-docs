@@ -24,7 +24,7 @@ You can open the ITOhub Mini App in two ways:
 * At first launch, the Mini App automatically authenticates you using your **Telegram account data (`initData`)**.
 * Our backend verifies this signature and grants you secure access.
 
-![Auth Screen](../../assets/en/auth.png)
+![Auth Screen](../../assets/en/2025-09-20_16-07-14.png)
 
 ### Step 3 — Accept Rules
 
