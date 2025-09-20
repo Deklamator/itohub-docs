@@ -39,4 +39,5 @@ You can open the ITOhub Mini App in two ways:
 * Tap the **Wallet** icon in the bottom navigation bar.
 * Connect via **TON Connect**.
 
-![Wallet Connect](../../assets/en/wallet.png)
+![Wallet Connect](../../assets/en/2025-09-20_16-11-14.png)
+![Wallet Connect](../../assets/en/2025-09-20_16-11-29.png)
