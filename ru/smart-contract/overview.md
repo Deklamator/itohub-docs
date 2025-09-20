@@ -1,18 +1,72 @@
+# Smart Contract Overview / Обзор смарт-контракта
+
+> **Target files:**
+>
+> • `en/smart-contract/overview.md`
+>
+> • `ru/smart-contract/overview.md`
+
+---
+
+## EN — Smart Contract Overview
+
+### 1. Purpose
+
+The ITOhub smart contract ensures **escrow-protected P2P deals** on the TON blockchain. Funds are locked until the seller fulfills obligations (channel transfer, ad placement, bot rental).
+
+### 2. State Machine
+
+```mermaid
+stateDiagram-v2
+    [*] --> PendingPayment
+    PendingPayment --> Funded : op_fund_deal
+    PendingPayment --> Cancelled : timeout / op_cancel_deal
+    Funded --> Resolved : op_resolve_deal
+    Funded --> Disputed : op_dispute
+    Disputed --> Resolved : DAO/arbiters
+    Disputed --> Cancelled : DAO/arbiters
+    Resolved --> [*]
+    Cancelled --> [*]
+```
+
+### 3. Transactions & Ops
+
+| Code              | Operation   | Actor            | Effect                          |
+| ----------------- | ----------- | ---------------- | ------------------------------- |
+| `op_create_deal`  | Create deal | Seller/Buyer     | Init escrow contract            |
+| `op_fund_deal`    | Fund deal   | Buyer            | Lock TON funds                  |
+| `op_resolve_deal` | Resolve     | Seller+Buyer     | Release funds to seller –3% fee |
+| `op_cancel_deal`  | Cancel      | Timeout / mutual | Refund buyer                    |
+| `op_dispute`      | Dispute     | Buyer/Seller     | Escalate to DAO/arbiters        |
+
+### 4. World-State (σ)
+
+* σ : id → { User, Channel, Deal, Passport, Offer }
+* **On-chain:** escrow status, wallets, Token Passport root.
+* **Off-chain:** metrics, extended history (Postgres, Redis, IPFS).
+
+### 5. Fees & Gas
+
+* Protocol fee: **3%** flat.
+* Gas: ≈ **0.02 TON** per tx.
+* Future: referrer share, treasury split, burn.
+
+### 6. Security Notes
+
+* Immutable contract on TON.
+* Timeout prevents deadlocks.
+* DAO/arbiters for disputes.
+* External audit + fuzz-tests recommended.
+
+---
+
 ## RU — Обзор смарт-контракта
 
-### Назначение
+### 1. Назначение
 
-**Смарт-контракт ITOhub** управляет **эскроу-сделками P2P** в блокчейне TON. Он гарантирует, что средства покупателя будут заблокированы до выполнения продавцом обязательств (передача канала, размещение рекламы, аренда бота и т.п.).
+Смарт-контракт ITOhub обеспечивает **P2P-сделки с эскроу** в блокчейне TON. Средства блокируются до тех пор, пока продавец не выполнит обязательства (передача канала, размещение рекламы, аренда бота).
 
-### Основные функции
-
-* **Создание сделки** (`op_create_deal`) — инициализация эскроу: ID сторон, актив, сумма.
-* **Фандинг сделки** (`op_fund_deal`) — покупатель блокирует средства в TON; сделка переходит в состояние *funded*.
-* **Завершение сделки** (`op_resolve_deal`) — при успешном завершении средства переводятся продавцу минус комиссия протокола.
-* **Отмена сделки** (`op_cancel_deal`) — если нет оплаты в течение таймаута или по обоюдному согласию до фандинга.
-* **Спор** (`op_dispute`) — опционально, передача на DAO/арбитров (будущий этап).
-
-### Машина состояний
+### 2. Машина состояний
 
 ```mermaid
 stateDiagram-v2
@@ -27,15 +81,24 @@ stateDiagram-v2
     Отменено --> [*]
 ```
 
-### Комиссии
+### 3. Транзакции и операции
 
-* **Комиссия протокола:** фиксированные 3% с каждой сделки.
-* **Gas:** \~0.02 TON за транзакцию (оплачивается на блокчейне).
-* Будущие расширения: доля рефералу, распределение в казну/сжигание.
+| Код               | Операция        | Участник            | Эффект                        |
+| ----------------- | --------------- | ------------------- | ----------------------------- |
+| `op_create_deal`  | Создание сделки | Продавец/Покупатель | Инициализация эскроу          |
+| `op_fund_deal`    | Фандинг сделки  | Покупатель          | Блокировка TON                |
+| `op_resolve_deal` | Завершение      | Продавец+Покупатель | Выплата продавцу –3% комиссии |
+| `op_cancel_deal`  | Отмена          | Таймаут / согласие  | Возврат средств покупателю    |
+| `op_dispute`      | Спор            | Продавец/Покупатель | Эскалация в DAO/арбитраж      |
 
-### Безопасность
+### 4. Мировое состояние (σ)
 
-* Неизменяемый контракт в TON.
-* Таймауты предотвращают зависание средств.
-* Все переходы состояния логируются на блокчейне.
-* Механизм спора рассчитан на DAO/арбитров.
+* σ : id → { User, Channel, Deal, Passport, Offer }
+* **On-chain:** статус эскроу, кошельки, корень Token Passport.
+* **Off-chain:** метрики, расширенная история (Postgres, Redis, IPFS).
+
+### 5. Комиссии и газ
+
+* Комиссия протокола: **3%**.
+* Gas: ≈ **0.02 TON** за транзакцию.
+* В планах: реферальные бонусы, распределение в казну, сжигание.

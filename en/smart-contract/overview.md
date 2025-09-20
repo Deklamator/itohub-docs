@@ -1,18 +1,20 @@
+# Smart Contract Overview / Обзор смарт-контракта
+
+> **Target files:**
+>
+> • `en/smart-contract/overview.md`
+>
+> • `ru/smart-contract/overview.md`
+
+---
+
 ## EN — Smart Contract Overview
 
-### Purpose
+### 1. Purpose
 
-The **ITOhub smart contract** is designed to manage **escrow-based P2P deals** on the TON blockchain. It ensures that buyer funds are locked until the seller fulfills obligations (channel transfer, ad placement, bot rental, etc.).
+The ITOhub smart contract ensures **escrow-protected P2P deals** on the TON blockchain. Funds are locked until the seller fulfills obligations (channel transfer, ad placement, bot rental).
 
-### Core Functions
-
-* **Create Deal** (`op_create_deal`) — initializes escrow with buyer/seller IDs, asset reference, and amount.
-* **Fund Deal** (`op_fund_deal`) — buyer locks funds in TON; deal moves to *funded* state.
-* **Resolve Deal** (`op_resolve_deal`) — on successful completion, funds are released to seller minus protocol fee.
-* **Cancel Deal** (`op_cancel_deal`) — if unpaid within timeout, or by mutual consent before funding.
-* **Dispute** (`op_dispute`) — optional, escalates to DAO/arbiters (future stage).
-
-### State Machine
+### 2. State Machine
 
 ```mermaid
 stateDiagram-v2
@@ -27,17 +29,27 @@ stateDiagram-v2
     Cancelled --> [*]
 ```
 
-### Fees
+### 3. Transactions & Ops
 
-* **Protocol fee:** 3% flat per deal.
-* **Gas fees:** \~0.02 TON per transaction (paid on-chain).
-* Future extensions: referrer share, burn/treasury split.
+| Code              | Operation   | Actor            | Effect                          |
+| ----------------- | ----------- | ---------------- | ------------------------------- |
+| `op_create_deal`  | Create deal | Seller/Buyer     | Init escrow contract            |
+| `op_fund_deal`    | Fund deal   | Buyer            | Lock TON funds                  |
+| `op_resolve_deal` | Resolve     | Seller+Buyer     | Release funds to seller –3% fee |
+| `op_cancel_deal`  | Cancel      | Timeout / mutual | Refund buyer                    |
+| `op_dispute`      | Dispute     | Buyer/Seller     | Escalate to DAO/arbiters        |
 
-### Security
+### 4. World-State (σ)
 
-* Immutable contract on TON.
-* Timeouts prevent deadlocks.
-* All state transitions logged on-chain.
-* Dispute mechanism designed for DAO/arbiters.
+* σ : id → { User, Channel, Deal, Passport, Offer }
+* **On-chain:** escrow status, wallets, Token Passport root.
+* **Off-chain:** metrics, extended history (Postgres, Redis, IPFS).
 
----
+### 5. Fees & Gas
+
+* Protocol fee: **3%** flat.
+* Gas: ≈ **0.02 TON** per tx.
+* Future: referrer share, treasury split, burn.
+
+
+
