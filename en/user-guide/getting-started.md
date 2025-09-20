@@ -24,14 +24,14 @@ You can open the ITOhub Mini App in two ways:
 * At first launch, the Mini App automatically authenticates you using your **Telegram account data (`initData`)**.
 * Our backend verifies this signature and grants you secure access.
 
-![Auth Screen](../../assets/en/2025-09-20_16-07-14.png)
+![Auth Screen](../../assets/2025-09-20_16-07-14.png)
 
 ### Step 3 — Accept Rules
 
 * Before using the app, you will be asked to **review and accept the platform rules**.
 * This step ensures fair and safe deals for all participants.
 
-![Accept Rules](../../assets/en/accept-rules.png)
+![Accept Rules](../../assets/accept-rules.png)
 
 ### Step 4 — Connect TON Wallet
 
@@ -39,5 +39,5 @@ You can open the ITOhub Mini App in two ways:
 * Tap the **Wallet** icon in the bottom navigation bar.
 * Connect via **TON Connect**.
 
-![Wallet Connect](../../assets/en/2025-09-20_16-11-14.png)
-![Wallet Connect](../../assets/en/2025-09-20_16-11-29.png)
+![Wallet Connect](../../assets/2025-09-20_16-11-14.png)
+![Wallet Connect](../../assets/2025-09-20_16-11-29.png)
