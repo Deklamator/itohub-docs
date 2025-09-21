@@ -13,7 +13,7 @@ Open your profile from the bottom nav.
 ## Sections
 - **Deal history** — full list of your deals with statuses.
 - **Offer requests** — incoming/outgoing requests tied to your offers and purchases.
-- **Instructions** — quick docs/help.
+- **Instructions** — quick docs/help with short walkthroughs.
 - **Support** — direct contact.
 
 ---
@@ -40,3 +40,14 @@ Switch **Inc / Out** to see **Incoming** (requests to you) or **Outgoing** (requ
 ![Requests — outgoing](../../assets/2025-09-22_00-41-42.png)
 
 > Tip: a **Confirmed** label means the other side accepted; proceed with the next step of the deal.
+
+---
+
+## Instructions
+A compact hub with short guides and links to the full docs:
+- **Connect TON wallet** via TON Connect.
+- **Create an offer** (channel/ad), get an **Offer code**.
+- **Buy with code** and **send offer request**.
+- **Fund escrow** and **complete/cancel** a deal.
+
+![Instructions screen](../)
