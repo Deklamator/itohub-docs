@@ -1,16 +1,35 @@
-# Using the Marketplace (Top)
+# Using TOP
 
-The "Top" section is a public marketplace where sellers post their public offers to sell channels or ad placements. It's a great place to discover new assets to purchase.
+Open the ranked market view to discover offers and jump into a deal.
 
-### Key Features
+## Step 1 — Open TOP
+- Tap **Top** on the bottom navigation.
+- You’ll see a featured **Ads** carousel on top and a ranked list **My Ads Offers on Market**.
 
-1.  **Browse Offers**: The screen displays a list of all public offers. You can scroll through them to find what you need.
+![TOP — main list](../../assets/2025-09-22_00-57-14.png)
 
-2.  **Infinite Scroll**: The list of offers loads automatically as you scroll down, allowing you to conveniently browse a large number of listings without switching pages.
+**You can see:**
+- Featured **Ads** carousel.
+- Ranked list with positions (1, 2, 3…).
+- Sort chips: **Price**, **Subs**, **Rating**.
+- **Info** button on each card.
 
-3.  **Sorting**: For your convenience, you can sort the offers by several key parameters:
-    * By price
-    * By the number of channel subscribers
-    * By the seller's rating
+---
 
-4.  **Proceed to Purchase**: By clicking on any offer card, you will be taken to a screen with its detailed description. From there, you can initiate the purchase process by sending a request to the seller.
+## Step 2 — Sort & Expand Info
+- Use **Price / Subs / Rating** to reorder the list.
+- Tap **Info** to expand a card with quick details (price, seller rating, created time) and **View Deal**.
+
+![TOP — expanded card with Info](../../assets/2025-09-22_00-57-23.png)
+
+> Tip: ranking helps compare offers quickly without opening each one.
+
+---
+
+## Step 3 — Open Offer Details → Send Request
+- Tap **View Deal** to open full **Offer Details**: name, price (TON), description, channel link, subscribers, avg. reach, seller profile & reviews.
+- Press **Send offer request** to start the purchase flow.
+
+![Offer details — Send offer request](../../assets/2025-09-22_00-57-53.png)
+
+> Next steps: fund escrow via TON Connect, wait for the seller’s action, then complete the deal.
