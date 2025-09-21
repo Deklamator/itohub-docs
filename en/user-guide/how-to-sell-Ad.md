@@ -34,9 +34,9 @@ Set:
 
 Press **Upload**.
 
-![Offer uploading form](../../assets/2025-09-21_14-01-52.png)
+![Offer uploading form](../../assets/2025-09-21_14-02-29.png)
 
 ## Step 6 — Copy the generated code
 The ad offer is created. Copy your **offer code** and share it with the buyer (or let buyers find it in TOP if public).
 
-![Success — Offer code](../../assets/2025-09-21_14-02-29.png)
+![Success — Offer code](../../assets/2025-09-21_14-01-52.png)
