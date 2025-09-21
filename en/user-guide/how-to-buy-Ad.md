@@ -26,12 +26,12 @@ Select the ad creative (or create a new one), then set **Post date**, **Post tim
 
 > Note: the **post time must be at least 1 hour from now**. If time is too close, you’ll see a validation message.
 
-![Validation: time must be ≥ 1h](../../assets/2025-09-21_14-35-55.png)
+![Validation: time must be ≥ 1h](../../assets/2025-09-21_14-36-21.png)
 
 ## Step 5 — Confirm data and send request
 When the data is correct, check **Data above is correct** and tap **Send offer request**.
 
-![Ready to send](../../assets/2025-09-21_14-36-21.png)
+![Ready to send](../../assets/2025-09-21_14-35-55.png)
 
 ## Step 6 — Confirmation
 You’ll see the confirmation screen: **Offer request was sent**.
