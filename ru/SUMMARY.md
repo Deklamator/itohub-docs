@@ -9,7 +9,6 @@
 * [Как купить  канал?](user-guide/how-to-buy-Ch.md)
 * [Как продать рекламу?](user-guide/how-to-sell-Ad.md)
 * [Как купить  рекламу?](user-guide/how-to-buy-Ad.md)
-* [Управление сделкой](user-guide/managing-deals.md)
 * [Управление сделкой покупателя канала](user-guide/managing-deals-b-ch.md)
 * [Управление сделкой продавца канала](user-guide/managing-deals-s-ch.md)
 * [Управление сделкой покупателя рекламы](user-guide/managing-deals-b-ads.md)
