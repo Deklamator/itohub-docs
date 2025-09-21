@@ -1,23 +1,65 @@
-# Managing a Deal
+# Managing a Deal — Seller (Channel) / Управление сделкой — Продавец (Канал)
 
-After the seller approves your request, a "deal room" is created. This is your personal control center for this specific transaction. Only the buyer and seller have access to this screen.
+---
 
-### Key Elements of the Deal Screen
+## EN — Seller flow (Channel)
 
-1.  **Visual Status**: At the top of the screen, you will see a status tree (`StatusTree`) that visually displays the current stage of the deal and the steps already completed. The status automatically updates every 10-20 seconds.
-2.  **Deal Chat**: Each deal includes a secure chat where you can communicate with the other party to clarify details.
-3.  **Timer (for Ads)**: If the deal involves an ad placement, you will see a countdown timer to the post's publication time.
+### Step 1 — Approve buyer’s request
+Open **Main → My deals and offers**. Find the request and tap **Approve**.
 
-### Party Actions
+![Approve request](../../assets/2025-09-21_22-45-03.png)
 
-Depending on your role (buyer or seller) and the current status of the deal, different buttons will be available to you to manage the process.
+### Step 2 — Wait for buyer’s payment
+The deal moves to **Payment Pending**. No action required from you yet.
 
-* **Seller Actions**:
-    * Approve or reject the initial deal request.
-    * Confirm the transfer of channel ownership.
-    * Request a preview of the ad post from the buyer before publication.
+![Payment pending](../../assets/2025-09-21_22-46-51.png)
 
-* **Buyer Actions**:
-    * Cancel the deal before payment.
-    * Create and fund the escrow transaction on the TON blockchain by sending funds to the smart contract.
-    * Confirm the receipt of channel ownership or the ad publication, which releases the funds to the seller.
+### Step 3 — Track the deal timeline
+Open the deal card. You’ll see the on-chain timeline:
+- **Deal created**
+- **Create TON deal** (blockchain deal is being created)
+- **Deposit TON** (awaiting buyer’s payment)
+
+Status now: **Waiting for buyer to create blockchain deal**.
+
+![Timeline — waiting for buyer](../../assets/2025-09-21_22-47-16.png)
+
+### Step 4 — Buyer paid → your action required
+After buyer funds escrow, status becomes **Payment confirmed, waiting for seller action**.
+
+![Payment confirmed, wait for seller](../../assets/2025-09-21_22-49-26.png)
+
+### Step 5 — Transfer channel rights in Telegram
+In Telegram channel settings:
+1) Add the buyer as admin (if needed).  
+2) Transfer **channel ownership** to the buyer.  
+Save changes.
+
+![Telegram — admin rights / transfer ownership](../../assets/2025-09-21_22-54-22.png)
+
+### Step 6 — Confirm transfer in the deal
+Return to the deal and press **I transferred channel** (or the respective button).  
+Timeline will advance to **Rights confirmed** when the buyer verifies.
+
+![Rights confirmed / waiting for buyer to release](../../assets/2025-09-21_22-55-55.png)
+
+### Step 7 — Wait for buyer to release funds
+After the buyer confirms ownership, the system prompts them to release escrow.
+
+![Waiting for buyer to release funds](../../assets/2025-09-21_22-56-06.png)
+
+### Step 8 — Deal completed — leave a review
+When funds are released, status becomes **Deal complete. Funds released.**  
+Tap **Leave a Review** to rate the counterparty and add a comment.
+
+![Deal complete](../../assets/2025-09-21_22-56-33.png)
+![Leave a review dialog](../../assets/2025-09-21_22-56-49.png)
+
+### Step 9 — Review saved
+Your review appears in the deal card.
+
+![Review posted](../../assets/2025-09-21_22-58-19.png)
+
+> **Bot notifications:** You’ll also receive messages from the ITO bot about each key step (request, transfer confirmed, funds released).
+
+
