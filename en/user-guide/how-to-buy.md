@@ -1,5 +1,5 @@
 
-## EN — How to Buy
+## EN — How to Buy Channel.
 
 ### Step 1 — Open Buy Menu
 - On the main screen, tap **Buy**.

@@ -1,4 +1,4 @@
-## EN — How to Sell
+## EN — How to Sell Channel.
 
 ### Step 1 — Open Sale
 
