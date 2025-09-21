@@ -24,12 +24,7 @@ You’ll edit content through the bot: upload media, forward from other chats, a
 ## Step 4 — Set a title → Continue in Telegram
 Enter a short internal title (for your reference) and press **Continue in Telegram**.
 
-![Enter title and continue](../../assets/2025-09-22_01-04-41.png)
-![Continue in Telegram](../../assets/2025-09-22_01-04-41.png)
-
-> If you already see the title field filled (e.g., “Test”), press **Continue in Telegram**.
-![Title example → Continue](../../assets/2025-09-22_01-04-54.png)
-![Title example → Continue (highlight)](../../assets/2025-09-22_01-05-11.png)
+![Title example → Continue](../../assets/2025-09-22_01-05-11.png)
 
 ## Step 5 — Edit Ad Content (mini app view)
 Back in the mini app, the **Edit Ad Content** card shows the actions.  
@@ -58,9 +53,29 @@ The bot will send an **Ad Preview** with buttons:
 
 ![Ad Preview — confirm](../../assets/2025-09-22_01-11-24.png)
 
-## Step 9 — Save in the mini app
-Return to **My ads** → open the creative → **Preview Ad** (optional) → **Save Ad Content**.  
-Your ad creative is now ready to be used in deals or offers.
+After confirmation you will also receive a success message from the bot:
+
+![Ad successfully created and saved](../../assets/2025-09-22_01-12-05.png)
+
+> Note: confirming in Telegram stores the content. You can additionally add a CTA button in the mini app and then save the ad.
+
+## Step 9 — (Optional) Add a **button** to the ad
+In the mini app, enable **Add a button to this ad**, enter **Button Text** and a **Button URL**.
+
+- The URL must be a **valid, full** link with scheme: `https://example.com`.  
+- If the format is wrong, you’ll see a validation error.
+
+![Button validation error](../../assets/2025-09-22_01-13-46.png)
+
+When the URL is valid, you can save:
+
+![Button valid — ready to save](../../assets/2025-09-22_01-14-09.png)
+
+## Step 10 — Save & final check
+Tap **Save Ad Content** in the mini app.  
+In Telegram, you’ll see the final creative; if you added a button, it appears under the post:
+
+![Final creative with button](../../assets/2025-09-22_01-14-23.png)
 
 ---
 
