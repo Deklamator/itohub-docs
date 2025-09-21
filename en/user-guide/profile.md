@@ -4,17 +4,39 @@ The "Profile" screen is your personal account within the application. It contain
 
 ### Main Information
 
-At the top of the profile screen, you can always see:
-* Your Telegram avatar
-* Your username
-* Your current platform rating, which is based on successfully completed deals.
+# Your Profile and History
 
-### Available Sections
+Open your profile from the bottom nav.
 
-From your profile, you can navigate to the following sections:
+![Profile — main](../../assets/2025-09-22_00-40-57.png)
 
-* **Deal History (`/tx-history`)**: A complete archive of all your past transactions, both successful and canceled.
-* **Offer Requests (`/outgoing-requests`)**: A list of all the outgoing requests you have sent to sellers and their current status (pending, accepted, rejected).
-* **Instructions**: A link to this guide, so you can always refresh your knowledge about how the platform works.
-* **Support**: Contact information for reaching the support team in case of any issues or questions.
-* **Contacts**: Other contact information for the project.
+## Sections
+- **Deal history** — full list of your deals with statuses.
+- **Offer requests** — incoming/outgoing requests tied to your offers and purchases.
+- **Instructions** — quick docs/help.
+- **Support** — direct contact.
+
+---
+
+## Deal history
+Each item shows **price**, **type** (Channel sale / Ad posting), your **role** (Buyer / Seller), and **offer ID**.
+
+![Deal history list](../../assets/2025-09-22_00-41-13.png)
+
+**Status badges:**
+- **Progress Pending** — the flow is active; wait for the next step.
+- **Completed** — finished successfully.
+- **Cancelled** — deal was cancelled.
+
+---
+
+## Offer requests
+Switch **Inc / Out** to see **Incoming** (requests to you) or **Outgoing** (requests you sent).
+
+**Incoming (Inc):**
+![Requests — incoming](../../assets/2025-09-22_00-41-28.png)
+
+**Outgoing (Out):**
+![Requests — outgoing](../../assets/2025-09-22_00-41-42.png)
+
+> Tip: a **Confirmed** label means the other side accepted; proceed with the next step of the deal.
