@@ -5,8 +5,10 @@
 ## Руководство для Пользователей
 
 * [Начало работы и Аутентификация](user-guide/getting-started.md)
-* [Как продать канал или рекламу?](user-guide/how-to-sell.md)
-* [Как купить канал или рекламу?](user-guide/how-to-buy.md)
+* [Как продать канал?](user-guide/how-to-sell-Ch.md)
+* [Как купить  канал?](user-guide/how-to-buy-Ch.md)
+* [Как продать рекламу?](user-guide/how-to-sell-Ad.md)
+* [Как купить  рекламу?](user-guide/how-to-buy-Ad.md)
 * [Управление сделкой](user-guide/managing-deals.md)
 * [Использование Маркетплейса (Top)](user-guide/marketplace.md)
 * [Управление рекламными креативами](user-guide/ad-creatives.md)
