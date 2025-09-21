@@ -10,7 +10,7 @@
 * [How to Sell Ad?](user-guide/how-to-sell-Ad.md)
 * [How to Buy Ad?](user-guide/how-to-buy-Ad.md)
 * [Managing a Deal Channel Byuer](user-guide/managing-deals-b-ch.md)
-* [Managing a Deal Chennel Seller](user-guide/managing-deals-s-ch.md)
+* [Managing a Deal Channel Seller](user-guide/managing-deals-s-ch.md)
 * [Managing a Deal Ads Byuer](user-guide/managing-deals-b-ads.md)
 * [Managing a Deal Ads Seller](user-guide/managing-deals-s-ads.md)
 * [Using the Marketplace (Top)](user-guide/marketplace.md)
